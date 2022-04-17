@@ -447,7 +447,7 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
   C는 create,R은 read, U는 update , D는 delete
 
 - Video.js같은 모델을 만드는 이유는 그 데이터가 어떻게 생겼는지 알려주기 위함이다.
-  예를 들어 "제목이 있고, 그건 문자형이다"라고 얘기해주는 형식이다. 
+  예를 들어 "제목이 있고, 그건 문자형이다"라고 얘기해주는 형식이다.
 
 - <h4>schema는 데이터 형태이다.</h4>
 
@@ -581,7 +581,7 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
   <h1>#6.16</h1>
 
-- mongoose.schema를 사용하는 이유는 그 데이터 타입의 유효성을 검사하기 
+- mongoose.schema를 사용하는 이유는 그 데이터 타입의 유효성을 검사하기
   때문이다. 받은 data type이 유효하지 않으면 그 data를 받지 않는다.
 
 - title을 string으로 받도록 해서 숫자를 사용하더라도 String값으로 반환한다.
@@ -623,7 +623,7 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - required를 사용하면 그 값이 없어서는 안된다. 안그러면
   무한로딩의 늪..
 
-- mongoose는  똑똑해서 schema에 function을 넣을 때
+- mongoose는 똑똑해서 schema에 function을 넣을 때
 
 - 변수에 errorMessage: error. \_message를 사용해서 에러 문구를
   창에 띄울 수 있게 된다. 물론 이것도 mongoose가 만들어주는 것이다!
@@ -727,12 +727,12 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - 우리는 object의 id가 req.params의 id같은 경우를 찾는 것이다.
   한 마디로, video object를 받는 대신에 true나 false를 받아낸다.
 
-- exitst()는 필터를 필요로 하고 영상의 어떤  property도 필터 가능하다.
- 하지만 findById ~는 꼭 id를 인자로 받는다.
+- exitst()는 필터를 필요로 하고 영상의 어떤 property도 필터 가능하다.
+  하지만 findById ~는 꼭 id를 인자로 받는다.
 
 <h1>#6.23</h1>
 
-- middleware의 function 안에는 this라는 키워드가 있는데  이 this는
+- middleware의 function 안에는 this라는 키워드가 있는데 이 this는
   우리가 저장하고자하는 문서를 가리킨다.
 
 - mongoose의 document에서 무슨 일이 발생하기 전&후에
@@ -740,23 +740,23 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - mongoose가 업데이트 돼서 니꼬쌤이 쓰셨던 {useNewUrlParser,useUnifiedTopology,useFindAndModify,}를 굳이 따라 쓸 필요가 없어졌다. 경험상 오히려 오류가 남
 
--  videoSchema.pre("save", async function () {
+- videoSchema.pre("save", async function () {
   this.hashtags = this.hashtags[0]
-    .split(",")
-    .map((word) => (word.startsWith("#") ? word : `#${word}`));
-});  가 Middleware이다.
+  .split(",")
+  .map((word) => (word.startsWith("#") ? word : `#${word}`));
+  }); 가 Middleware이다.
 
 ---
+
 <h1>#6.24</h1>
 
 - #6.23에서 우리는 어떤 이벤트가 발생하기 이전에 중간에 가로채서
-  우리 문서를  수정할 수 있다는 것을 배웠다.
+  우리 문서를 수정할 수 있다는 것을 배웠다.
 
-- Static을 생성하기 위해서 필요한 것은 Schema.static이랑 function과 
-만들고자하는 static의 이름이다.
+- Static을 생성하기 위해서 필요한 것은 Schema.static이랑 function과
+  만들고자하는 static의 이름이다.
 
 - 댓글 보니 Static은 아마 reuse(재사용) function을 위해 쓰이는 것같다.
-
 
 - findOneAndUpdate는 save hook를 호출하지 않는다.
 
@@ -768,12 +768,13 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - static function을 사용했는데 이해가 안돼서 복습해야하는 파트이다.
 
 ---
+
 <h1>#6.25</h1>
 
 - https://mongoosejs.com/docs/guide.html에서 명령어? 관련 정보를
   얻을 수 있다.
 
-- delete와 remove의 차이점은 
+- delete와 remove의 차이점은
 
 ---
 
@@ -781,15 +782,15 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - Mongoose가 좋은 이유중 하나는 쿼리엔진을 가지고 있다,
 
-- sort({ variable: "desc", }는 순서정렬을 해주는 것인데 desc는 
+- sort({ variable: "desc", }는 순서정렬을 해주는 것인데 desc는
   최근의 것이 맨 위로 올라가고 asc는 오래된 것이 위로 올라간다.
 
 - input에서 name 설정해주는 것은 매우 중요하다.
 
 - keyword는 우리가 search할 때에만 생기는 것이다.
 
-- 이 파트에서 req,query로 URL에 있는 모든 정보들을 확인할 수 
-있었다, 그리고 때때로 keyword가 undifined가 될 수도 있었다.
+- 이 파트에서 req,query로 URL에 있는 모든 정보들을 확인할 수
+  있었다, 그리고 때때로 keyword가 undifined가 될 수도 있었다.
 
 - regular expression은 특정 단어로 끝나는 것들을 검색한다던가 특정
   단어를 포함한 제목이라던지 특정 단어로 시작되는 제목도  
@@ -812,5 +813,35 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 <h1>#7.1</h1>
 
--  db.users.find()를 했을 때 password가 노출되는 위험한 상황이 발생됨
+- db.users.find()를 했을 때 password가 노출되는 위험한 상황이 발생됨
   그래서 보안처리를 해 줘야 한다.
+
+---
+
+<h1>#7.1</h1>
+
+- 같은 입력값에선 같은 해시값이 나온다. 이것을 컴퓨터과학에서
+  deterministic function(결정적 함수) 라고 한다. = 항상 똑같이
+  나오기 때문에 그런다.
+
+- mongodb에서 data 값을 전부 지우려면 db.(+ COLLECTION_NAME).remove({})
+  를 해야한다.
+
+- bcrypt를 사용해서 해시값으로 변환시켜줄 수 있다.
+
+- bcrypt엔 soltRounds라는 변수가 있는데, 말그래도 소금을 뿌린다는 의미로
+  password를 더 예측하기 어렵게 만들어준다. (여러번 해싱함.)
+
+- userSchema.pre("save", saltRounds, async function () {
+  this.password = await bcrypt.hash(this.password);
+  })처럼 이 context,function 안에서 this는 여기서 create되는 User를 가르킨다.
+
+- await을 쓰기 때문에 callback 함수는 필요없다.
+
+- 결론적으로 userSchema.pre("save", async function () {
+  this.password = await bcrypt.hash(this.password, 5);
+  })이라는 함수를 내 방식대로 설명해 보자면 Schema는 data
+  형식?을 가져오는데 .pre가 붙어 있으니 data를 가져오는 그
+  사이에 무언가를 한다는 것인데 this.password를 통해 난
+  password DATA만 사용할 것을 알려주고 bcrypt를 통해서
+  5번 해싱하게 된다..
