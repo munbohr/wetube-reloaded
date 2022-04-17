@@ -451,7 +451,17 @@ block은 templete의 창문같은 것이다. 한마디로 요약하자면
 
 - <h4>schema는 데이터 형태이다.</h4>
 
+---
+
 <h1>#6.10</h1>
+
+- <h2>mongodb사용법
+  1. wsl창에 mongo를 입력
+  2. mongodb console창이 뜬다.
+  3. show dbs하면 database들이 나온다.
+  4. use + 사용할 db_NAME을 치면 그 db 안으로 들어가진다
+  5. show collections하면 그동안의 거시적인 data를 볼 수 있다. 
+  6, 그리고 db.( + 아까 나온 data).find()하면 모든 data를 볼 수 있다</h2>
 
 - const videoSchema = new mongoose.Schema({
 
@@ -798,3 +808,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 - unique를 통해 같은 것들을 여러개를 만드는 것을 막는다.
 
+---
+
+<h1>#7.1</h1>
+
+-  db.users.find()를 했을 때 password가 노출되는 위험한 상황이 발생됨
+  그래서 보안처리를 해 줘야 한다.
