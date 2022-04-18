@@ -22,36 +22,36 @@ export const postJoin = async (req, res) => {
     }
 };
 
-export const edit = (req, res) => res.send("Edit User");
-export const remove = (req, res) => res.send("Remove User");
 export const getLogin = (req, res) => res.render("login", {pageTitle: "Login"});
 export const postLogin = async (req, res) => {
     const {username, password} = req.body;
     const user = await User.findOne({username});
     const pageTitle = "Login";
     
-
+    
     if(!user) {
         return res.status(400).render("login", {
             pageTitle, 
             errorMessage:"An account with this username doesn't exisits"
         });
     }
-
-
+    
+    
     const ok = await bcrypt.compare(password, user.password);
-
+    
     if (!ok) {
       return res.status(400).render("login", {
         pageTitle,
         errorMessage: "Wrong password",
-      });
-    }
-    req.session.loggedIn = true;
-    req.session.user = user;    
-    return res.redirect("/");
-  };
+    });
+}
+req.session.loggedIn = true;
+req.session.user = user;
+return res.redirect("/");
+};
 
 
+export const edit = (req, res) => res.send("Edit User");
+export const remove = (req, res) => res.send("Remove User");
 export const logout = (req, res) => { res.send("Log Out") }
 export const see = (req, res) => { res.send("See User") }

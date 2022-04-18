@@ -20,19 +20,8 @@ app.use(session({
     saveUninitialized: true,
 }))
 
-app.use((req, res, next) => {
-    req.sessionStore.all((error, sessions) => {
-      console.log(sessions);
-      next();
-    });
-  });
 
-app.get("/add-one",(req, res, next) => {
-    req.session.potato += 1;
-    return res.send(`${req.session.id} ${req.session.potato}`);
-})
-
-app.use(localsMiddleware)
+app.use(localsMiddleware);  
 app.use("/", rootRouter);
 app.use("/videos", videoRouter);
 app.use("/users", userRouter);
