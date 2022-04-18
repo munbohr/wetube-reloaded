@@ -21,6 +21,7 @@ export const postJoin = async (req, res) => {
         return res.status(404).render("join", { pageTitle: " Upload Video", errorMessage: error._message });
     }
 };
+
 export const edit = (req, res) => res.send("Edit User");
 export const remove = (req, res) => res.send("Remove User");
 export const getLogin = (req, res) => res.render("login", {pageTitle: "Login"});
@@ -28,21 +29,29 @@ export const postLogin = async (req, res) => {
     const {username, password} = req.body;
     const user = await User.findOne({username});
     const pageTitle = "Login";
+    
+
     if(!user) {
         return res.status(400).render("login", {
             pageTitle, 
             errorMessage:"An account with this username doesn't exisits"
         });
     }
+
+
     const ok = await bcrypt.compare(password, user.password);
+
     if (!ok) {
       return res.status(400).render("login", {
         pageTitle,
         errorMessage: "Wrong password",
       });
     }
-    console.log("Log User coming soon");
+    req.session.loggedIn = true;
+    req.session.user = user;    
     return res.redirect("/");
   };
+
+
 export const logout = (req, res) => { res.send("Log Out") }
 export const see = (req, res) => { res.send("See User") }

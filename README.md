@@ -907,3 +907,14 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - session({ }) 안에 secret라는 설정을 해줘야한다.
 
 - session 미들웨어가 사이트로 들어오는 모두를 기억할 것이다.
+
+---
+
+<h1>#7.10</h1>
+
+- locals object는 이미 모든 pug template template에 import
+  된 object이다. Pug에 #{object} 를 써서 호출 가능
+
+- 다시 한번 강조하지만, 이는 locals object 안에 있어야 한다.
+  Ex) res.locals.OBJECT_NAME = ~
+  형식으로 작성해야한다.
