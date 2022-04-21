@@ -1022,3 +1022,23 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - env 안에 있는 키값과 이름이 동일해야한다
 
 - http://localhost:4242/users/github/callback (?)
+
+---
+
+<h1>#7.18</h1>
+
+- Github에서 받은 토큰을 Access 토큰으로 변환시켜야한다
+
+- finalUrl에 POST 요청을 보낼 것이다. 우선 fetch를 통해 데이터를
+  받아오고 그 데이터에서 JSON을 추출할것이다.
+
+- await.json이라는 실수를 함 ===> 원래의 답 = await json
+
+- await fetch를 한 다음에 JSON을 가져오는것이 더 편하다.
+
+- fetch는 브라우저에서만 가능하다. fetch의 기능이 NodeJS에
+  포함돼 있지 않기때문이다.
+
+- alert 또한 사용할 수 없다.
+
+- 그리고 await을 쓸 땐 항상 async를 있지말자!
