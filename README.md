@@ -1042,3 +1042,17 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - alert 또한 사용할 수 없다.
 
 - 그리고 await을 쓸 땐 항상 async를 있지말자!
+
+---
+
+<h1>#7.19</h1>
+
+- npm install node-fetch 했는데
+  Error [ERR_REQUIRE_ESM]: require() of ES Module ~ not supported.
+  라는 오류가 뜨면 npm install node-fetch@2를 하면 간단히
+  해결 된다.
+
+- 만약 response 안에 access_token이 없다면 우린 login으로
+  redirect해야한다.
+
+- fetch를 요청하면 fetch가 돌아오고 해당 fetch의 JSON을 받는다.
