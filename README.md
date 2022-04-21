@@ -1,4 +1,4 @@
-# wetube 클론 강의 중 꿀팁-작성자:munbohr
+# wetube 클론 강의 내용 - munbohr
 
 npm install 할 때에는 package.json을 꼭 닫고 실행해야 한다.
 안그러면 version 충돌이 일어난다.
@@ -918,3 +918,107 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - 다시 한번 강조하지만, 이는 locals object 안에 있어야 한다.
   Ex) res.locals.OBJECT_NAME = ~
   형식으로 작성해야한다.
+
+---
+
+<h1>#7.11</h1>
+
+- session이라는 middleware가 브라우저에 cookie를 전송한다.
+
+- cookie는 backend가 우리의 브라우저에 주는 정보인데
+  cookie에는 정해진 규칙이 있기때문에 backend에
+  request를 할때 브라우저가 알아서 그 request에 cookie를
+  덧붙이게 된다.
+
+- 브라우저와 backend같은 경우엔, 살아있는 Connection이란 없다.
+  render가 끝나거나 redirect가 발생하거나, 응답없음 등을 받으면
+  connection은 바로 끝난다. 그래서 사용자에게 session ID를 준다.
+
+- Cookie와 Session의 개념은 별개이다.
+
+- Cookie는 단지 정보를 주고 받는 것이고, 그게 다이다.
+  Cookie는 자동적으로 처리된다.
+
+- 다른건 session ID인데, 이건 Cookie에 저장된다.
+
+- backend는 생성된 모든 session ID를 관리하는 곳이다.
+
+- session store는 우리가 session을 저장하는 곳이다.
+
+- session store도 재시작하면 cookie는 유효하지 않게된다.
+
+- 브라우저마다 req.session이 다르기 때문에 몇몇 정보를
+  req.session object에 덧붙이는것이다.
+
+---
+
+<h1>#7.12</h1>
+
+- 로그인한 상태에서 connect-mongo(MongoStore)를 사용하고 Backend를
+  kill하고 다시켜도 로그인이 돼있는데 이는 로그인 정보가 서버에 있지
+  않게 돼서 그렇다. 세션들을 database에 저장하도록 만든것이다.
+
+---
+
+<h1>#7.13</h1>
+
+- 이 파트에선 session authentication(인증)을 사용하면 생길 수 있는 문제를
+  다룬다.
+
+- session을 하나하나 만들어서 db에 저장하면 큰 돈이 들게 된다.
+
+- resave: false,
+  saveUninitialized: false
+  로 해주게 되면 세션이 새로 만들어지거나 수정된 적이
+  없을 때 Uninitialized(초기화 되지않은)이다.
+
+- Uninitialized 라는 설정은 세션을 수정할 때 만 세션을
+  DB에 저장하고 쿠키를 넘겨주는 것이다.
+
+- Uninitialized가 false로 돼있으면 Backend가 로그인한
+  사용자에게만 쿠키를 주도록 설정되었다는 것이다.
+
+---
+
+<h1>#7.14</h1>
+
+- 쿠키의 프로퍼티
+
+- secret은 우리가 쿠키에 sign 할 때 사용하는 string이다.
+  쿠키에 sign하는 이유는 우리 backend에 쿠키를 줬다는 것을
+  보여주기 위함이다. 왜냐하면 session hijack(납치)라는
+  공격유형이 있기때문이다.
+
+- 브라우저는 Domain에 따라 쿠키를 저장하도록 되어있다.
+  그리고 Cookie는 도메인데 있는 Backend로만 전송된다.
+
+- 만료 날짜를 정하지 않으면 그것은 session cookie로 설정
+  된다.
+
+---
+
+<h1>#7.15</h1>
+
+- env를 사용해서 데이터값을 숨길 수 있다.
+
+- env 파일에 추가하는 모든 건 대문자로 적어야한다.
+
+- env에 process.env.DB_URL를 바로하면 undefined가 뜬다.
+
+1. env파일을 만든 후에 .gitignore로 가리기
+2. 비밀로 해야하는 string을 process.env(환경변수)로 바꾸기
+3. init.js에 import "dotenv/config";를 넣어주면 오류없이 진행된다.
+4. env안의 필요한 정보를 process.env.(SECRET_NAME)으로 가져온다.
+
+---
+
+<h1>#7.16</h1>
+
+- dotenv를 설치하고 require("dotenv") .config();를 하면
+  dotenv는 파일을 읽고 env를 추가해줄 것이다.
+
+- init.js에 import "dotenv/config";를 넣어줘야 한다.
+
+- env 안에 있는 키값과 이름이 동일해야한다
+
+- http://localhost:4242/users/github/callback (?)

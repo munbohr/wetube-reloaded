@@ -1,11 +1,11 @@
 import express from "express";
 import morgan from "morgan";
 import session from "express-session"; 
+import MongoStore from "connect-mongo";
 import rootRouter from "./routers/rootRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import {localsMiddleware} from "./middlewares";
-
 const app = express();
 const logger = morgan("dev");
 
@@ -14,10 +14,17 @@ app.set("views", process.cwd() + "/src/views")
 app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 
+console.log(process.env.DB_URL);
+
 app.use(session({
-    secret: "hello",
-    resave: true,
-    saveUninitialized: true,
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 20000,
+        //이러면 sessionID가 20초 후에 사라진다.
+    },
+    store: MongoStore.create({mongoUrl: process.env.DB_URL})
 }))
 
 
