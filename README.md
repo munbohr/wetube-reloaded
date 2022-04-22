@@ -1064,3 +1064,5 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 - access_token을 가지려고 하는 첫번째것은 scope이다.
   scope:"read:user user:email"을 통해 유저를 읽고 유저 이메일을
   가져온다.
+
+Github Login은 복습이 필요하다!!!!!!!!!
