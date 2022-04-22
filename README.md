@@ -1056,3 +1056,11 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
   redirect해야한다.
 
 - fetch를 요청하면 fetch가 돌아오고 해당 fetch의 JSON을 받는다.
+
+---
+
+<h1>#7.20</h1>
+
+- access_token을 가지려고 하는 첫번째것은 scope이다.
+  scope:"read:user user:email"을 통해 유저를 읽고 유저 이메일을
+  가져온다.
