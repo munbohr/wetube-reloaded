@@ -1025,6 +1025,15 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
 
 ---
 
+<h1>#7.17</h1>
+
+- callback Url이 자꾸 떠서 뭔가 했었는데
+  Authorization callback URL에 user 뒤에 /finish로
+  URL을 바꿔주지 않아서 일어난 일...
+  조심하도록 하자!
+
+---
+
 <h1>#7.18</h1>
 
 - Github에서 받은 토큰을 Access 토큰으로 변환시켜야한다
@@ -1066,3 +1075,9 @@ id를 사용하지 않는다. (곧 얘기해주실 예정)
   가져온다.
 
 Github Login은 복습이 필요하다!!!!!!!!!
+
+---
+
+<h1>#7.21</h1>
+
+- email은 String이 아닌 Object이다.
