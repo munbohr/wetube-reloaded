@@ -1089,3 +1089,25 @@ Github Login은 복습이 필요하다!!!!!!!!!
 <h1>#7.22</h1>
 
 - req.session.destroy();하면 세션이 사라지고 로그아웃된다.
+
+---
+
+<h1>#7.23</h1>
+
+- scope는 user로 무엇을 할것인지 설정한다.
+
+- URL로 POST request를 보내고, 모든 것이 올바르면 우리에게
+  access_token을 준다. (access_token은 Github API와 상호작용할 때 쓴다.)
+
+- Github API에 어떤 method를 주더라도 응답을 보내준다.(access_token이
+  있다면 말이다..)
+
+- let user = await User.findOne({email: emailObj.email})을 통해서
+  데이터베이스에서 해당 이메일을 찾고 해당 email을 찾았다면
+  로그인 시킨다
+
+- 만약 데이터베이스에서 해당 email을 찾지 못했을 경우 그 email로 user를
+  만들것이다.
+
+- socialOnly가 true이면 깃헙을 통해 만들어진 계정이고 socialOnly가
+  false이면 깃헙을 통해 만들어진것이 아니다.
