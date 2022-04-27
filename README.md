@@ -1111,3 +1111,18 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - socialOnly가 true이면 깃헙을 통해 만들어진 계정이고 socialOnly가
   false이면 깃헙을 통해 만들어진것이 아니다.
+
+---
+
+<h1>#8.1</h1>
+
+- 이 과정에선 우리가 보호하려는 페이지에 로그인 하지 않은
+  사람들이 가는 것을 막는 것이다.
+
+- .all()을 통해 모든 route에 .all() 안의 값을 대입할 수 있다.
+
+- {...req.session}은 req.session.user안에 있는 내용을 전해주는 것이다.
+
+- 기본적으로 findByIdAndUpdate는 update되기 전의 데이터를 return
+  해주고 new:true를 설정해주면 findByIdAndUpdate가 업데이트 된
+  데이터를 return해줄 것이다.
