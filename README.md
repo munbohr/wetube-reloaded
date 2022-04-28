@@ -1162,4 +1162,7 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 <h1>#8.7</h1>
 
--
+- avatarUrl을 절대 DB에 파일을 저장하면 안된다.
+
+- loggedInUser는 현재 로그인된 사용자이고 localsMiddleware를 통해
+  pug에 전달되고 있다.
