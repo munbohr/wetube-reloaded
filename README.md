@@ -1181,9 +1181,11 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - FILE_NAME이 asdadlkncx213da 요렇게 돼 있어도 컴퓨터는 알아서
   이해하고 변환?시켜준다
 
-  - multer는 업로드하는 사진을 이름을 겹치지 않게 파일명을 지정해주고
-    우리가 "지정한" 파일로 저장시킨다. 그리고 그 파일에 관한 정보를
-    받아서, postEdit에 전달해준다. 그러면 postEdit에서 req.file을 사용할
-    수 있다.
+- multer는 업로드하는 사진을 이름을 겹치지 않게 파일명을 지정해주고
+  우리가 "지정한" 파일로 저장시킨다. 그리고 그 파일에 관한 정보를
+  받아서, postEdit에 전달해준다. 그러면 postEdit에서 req.file을 사용할
+  수 있다.
+
+- multer를 사용할 때에는 enctype="multipart/form-data"를 적어야한다.
 
 -
