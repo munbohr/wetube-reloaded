@@ -1126,3 +1126,40 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - 기본적으로 findByIdAndUpdate는 update되기 전의 데이터를 return
   해주고 new:true를 설정해주면 findByIdAndUpdate가 업데이트 된
   데이터를 return해줄 것이다.
+
+---
+
+<h1>#8.4</h1>
+
+- loggedInUser는 모든 pug에서 사용 가능한 locals에서
+  가져오는 것이다.
+
+---
+
+<h1>#8.6</h1>
+
+- 실험결과 type="file"일때 value를 해보니 아무런 영향도
+  미치지 못했다!
+
+- type="file"일때 accept=\*/image등등으로 파일 업로드를
+  제한 할수 도 있다
+
+- multer를 사용하려면 enctype="multipart/form-data"을 해줘야한다.
+  위 문장은 우리의 form이 다르게 encode될 거라는 의미이다.
+
+- 아마 multer는 사용자들이 업로드하는 파일을 개발자(즉, 내가) 원하는
+  폴더 등으로 이동시키는 역할을 하는것 같다.
+
+- <h3> uploadFiles.single()이 하는 역할은 template의 input에서 오는 avatar파일을
+  가지고 파일을 업로드하고 uploads 폴더에 저장한다. 그리고 그 다음
+  controller인 postEdit에 그 파일의 정보를 전달한다. 이렇게 하면 request에 
+  req.file이 추가 된다는 것이다.</h3>
+
+- console.log(file); 했는데 왜 file 관련 이메일이 안뜨나 했더니 postEdit에서 선언해줘야
+  한다.. 물론 나는 postChangePassword에다가 적어서 실행되지 않은 것이다.
+
+---
+
+<h1>#8.7</h1>
+
+-
