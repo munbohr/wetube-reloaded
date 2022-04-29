@@ -1194,3 +1194,8 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - owner에 reference를 추가해준다, 그 이유는 'mongoose'에게 owner에
   id를 저장하겠다고 알려줘야하기 때문이다.
+
+- user의 id를 video model에 저장하니깐 정말 유용하다
+  왜냐하면 누가 업로드했는지 알 수 있기때문이다!
+
+- video.owner는 string이고 id이다
