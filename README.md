@@ -1199,3 +1199,5 @@ Github Login은 복습이 필요하다!!!!!!!!!
   왜냐하면 누가 업로드했는지 알 수 있기때문이다!
 
 - video.owner는 string이고 id이다
+
+- populate의 video를 실제로 User 데이터로 채워준다.
