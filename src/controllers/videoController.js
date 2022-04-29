@@ -50,12 +50,14 @@ export const getUpload = (req, res) => {
     return res.render("upload", { pageTitle: "Upload Video" });
 };
 export const postUpload = async (req, res) => {
+    const { path: fileUrl } = req.file;
     const file = req.file;  
     const { title, description, hashtags } = req.body;
     try {
         await Video.create({
             title,
             description,
+            fileUrl,
             fileUrl:file.path,
             createAt: Date.now(),
             hashtags: Video.formatHashtags(hashtags),
@@ -66,6 +68,7 @@ export const postUpload = async (req, res) => {
         });
         return res.redirect("/");
     } catch (error) {
+        console.log(error);
         return res.status(404).render("upload", { pageTitle: " Upload Video", errorMessage: error._message });
     }
 };

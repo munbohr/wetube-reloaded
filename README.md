@@ -1188,4 +1188,9 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - multer를 사용할 때에는 enctype="multipart/form-data"를 적어야한다.
 
--
+---
+
+<h1>#8.11</h1>
+
+- owner에 reference를 추가해준다, 그 이유는 'mongoose'에게 owner에
+  id를 저장하겠다고 알려줘야하기 때문이다.
