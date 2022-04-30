@@ -1201,3 +1201,16 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - video.owner는 string이고 id이다
 
 - populate의 video를 실제로 User 데이터로 채워준다.
+
+---
+
+<h1>#8.13</h1>
+
+- video는 1개의 owner를 가지고 있고 그 owner는 여러개의
+  videos를 가질 수 있다.
+
+- 새로 저장하는 영상의 id를 user model에 저장해 줄 것이다.
+
+- 앞으로 특정 조건에서만 해싱되도록 만들 것이다.
+  save() 할 때마다 'hash'가 일어나고 있다
+  그로 인해 업로드한 사용자는 비밀번호를 사용할 수 없게된다.
