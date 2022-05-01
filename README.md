@@ -1316,3 +1316,22 @@ Github Login은 복습이 필요하다!!!!!!!!!
 <h1>#9.4</h1>
 
 - webpack에서 loader를 합치는 법은 제일 마지막 loader부터 해야한다.(역순)
+
+---
+
+<h1>#9.5</h1>
+
+- 중요한 것은 loader는 적힌 것들의 반대 순서대로 작동한다.
+
+- use: ["style-loader", "css-loader", "sass-loader"], 이런식으로 loader를
+  적는다
+
+- style-loader는 가장 마지막에 실행된다
+
+- sass-loader는 scss를 일반적인 css로 바꿔준다.
+  왜냐하면 브라우저는 scss를 이해하지 못하기 때문이다.
+
+- style-loader는 css code를 브라우저에 적용하는 역할을 한다.
+
+- <h3>const path = require('path');를 꼭 빼먹지 말자 
+  안그러면 ReferenceError: path is not defined 이런거 뜬다.</h3>
