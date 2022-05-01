@@ -1335,3 +1335,24 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - <h3>const path = require('path');를 꼭 빼먹지 말자 
   안그러면 ReferenceError: path is not defined 이런거 뜬다.</h3>
+
+-
+
+<h1>#9.6</h1>
+
+- watch: true를 통해 바뀔 때마다 reload를 해준다.
+
+- dev는 백엔드를 담당하는 것이고 assets는 프론트엔드를 담당한다.
+  둘 다 동시에 돌려야한다.
+
+- output에 있는 clean: true는 말 그대로 build를 시작하기 전에 clean
+  해주는 것이다.
+
+- 문제가 있는데 webpack.config.js가 변경될 때마다 nodemon이 재시작 되는 것이다.
+
+- webpack은 서로 다른 console에서 켜야한다.
+
+- webpack.config.js는 webpack이 실행될 때 기본적으로 찾는 설정파일이기 때문에
+  scripts안에 "assets": "webpack" 만 적어도 된다.
+
+- nodemon은 자동적으로 nodemon.json 파일에서 설정을 찾을 것이다.
