@@ -1294,3 +1294,25 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - Webpack은 loader를 통해서 전환 시키는 것이다.
   우린 babel-loader를 사용할 것이다.
+
+---
+
+<h1>#9.3</h1>
+
+- Express는 아직 /assets/js/main.js가 있는 줄 모른다.
+
+- static 파일이란 Express한테 사람들이 이 폴더 안에 있는 파일들을 볼 수 있게
+  해달라고 요청하는 것이다.
+
+- 폴더명은 /upload, upload일 필요가 없다, /static, upload이여도 된다.
+
+- 서버한테 assets 폴더의 내용물을 /static 주소를 통해 공개하라고 하는 것이다.
+
+- 섹시한 JS 코드는 src/client/js/main.js 안에 있는 파일이다 npm run assets를 하면
+  알아서 Webpack이 바꿔주는 것이다.
+
+---
+
+<h1>#9.4</h1>
+
+- webpack에서 loader를 합치는 법은 제일 마지막 loader부터 해야한다.(역순)
