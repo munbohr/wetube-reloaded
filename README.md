@@ -1356,3 +1356,11 @@ Github Login은 복습이 필요하다!!!!!!!!!
   scripts안에 "assets": "webpack" 만 적어도 된다.
 
 - nodemon은 자동적으로 nodemon.json 파일에서 설정을 찾을 것이다.
+
+- partials나 mixin을 사용할 땐 scss에도 같은 이름 component를 만든다.
+
+- a:hover를 쓰고싶을땐 a {
+  &:hover {
+  hover 특징을 쓴다.
+  }
+  }
