@@ -46,19 +46,19 @@ google.con === google.com/ <-- 이런게 root이다.
 https는 서버가 서버끼리 서로 소통하는 방법이다.
 GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 것이다.
 
----
-
-app.get("root", function) 처럼 2번째에는 function이 꼭 와야하는것 같다.
+- reqest는 가져와달라고 요구하는 것, response는 응답하는것
 
 ---
 
-express 에선 route handler에는 event같은 건 없지만 req(uest), res(ponse)라는 섹시한
-object 두 개가 있다. express가 무대 뒤에서 해주는 것이다(심지어 무료로!)
-req엔 ㅎㄷㄷ 할 정도로 많은게 존재한다! 전부 다 req object들이다.
+<h1>#3.3</h1>
 
----
+- app.get("root", function) 처럼 2번째에는 function이 꼭 와야하는것 같다.
 
-return res.end();는 server 호출하는 것은 안하겠다고 선언하는 것이다.
+- express 에선 route handler에는 event같은 건 없지만 req(uest), res(ponse)라는 섹시한
+  object 두 개가 있다. express가 무대 뒤에서 해주는 것이다(심지어 무료로!)
+  req엔 ㅎㄷㄷ 할 정도로 많은게 존재한다! 전부 다 req object들이다.
+
+- return res.end();는 server 호출하는 것은 안하겠다고 선언하는 것이다.
 
 ---
 
