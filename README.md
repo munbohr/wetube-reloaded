@@ -1336,7 +1336,7 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - <h3>const path = require('path');를 꼭 빼먹지 말자 
   안그러면 ReferenceError: path is not defined 이런거 뜬다.</h3>
 
--
+---
 
 <h1>#9.6</h1>
 
@@ -1364,3 +1364,16 @@ Github Login은 복습이 필요하다!!!!!!!!!
   hover 특징을 쓴다.
   }
   }
+
+---
+
+<h1>#11.0</h1>
+
+- output: {
+  filename: "js/[name].js", } 안에 요렇게 [name]을 넣으면
+  webpack이 자연스럽게 name들을 가져간다.
+
+- static url로 가면, 유저에게 assets 폴더를 접근할 권한을 준다.
+
+- pug에서 //를 사용하면 검사했을때 보이지만 구동은 하지않고
+  //-를 하면 구동하지않고 검사해도 보이지 않는다.
