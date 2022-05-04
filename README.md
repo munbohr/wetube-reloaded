@@ -72,9 +72,13 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
 
 - middleware = 중간에 있는 소프트 웨어
 
+- req와 res 사이에 있다.
+
 - 모든 middleware는 handler이고, 모든 handler는 middleware이다.
 
-- nex();는 다음 함수를 호출한다, 다음 function이 없으면 작동 안함.
+- next();는 다음 함수를 호출한다, 다음 function이 없으면 작동 안함.
+
+- return을 사용하면 middleware에서 next function으로 넘어가지지 않는다.
 
 ---
 
@@ -86,7 +90,9 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
   }
   하면은 다음 함수가 호출 되지 않는다.
 
-- gossipware 은 우리가 어디를 가려는지 말해준다
+- gossipMiddleware 은 우리가 어디를 가려는지 말해준다
+
+- req.url을 하면 url을 읽어온다
 
 ---
 
@@ -94,6 +100,12 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
 
 - middleware를 use하는게 먼저 오고, 그 다음에 URL의 get이 와야한다.
   마지막 함수는 next();를 굳이 추가 할 필요가 없다.
+
+- middleware를 사용할 때엔 next();를 꼭 사용해줘야 한다.
+
+- 유저가 로그인 했는지도 middleware로 확인하는 절차를 거칠 수 있다.
+
+- 모든(?) 함수는 middleware나 controller가 될 수 있다.
 
 ---
 
@@ -104,11 +116,17 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
   모두 다운받아준다. dependencies는 프로젝트가 작동하기 위해 필요한 것,
   devDependencies는 개발자들이 개발하기 위해 필요한 것.
 
+- 브라우저에서 request를 준다.
+
+- 서버는 항상 인터넷에 연결된 컴퓨터
+
 ---
 
   <h1>#3.9</h1>
 
 - () => function을 inline function이라고 부른다
+
+- controller는 function을 필수적으로 요구한다
 
 ---
 
@@ -1377,3 +1395,14 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - pug에서 //를 사용하면 검사했을때 보이지만 구동은 하지않고
   //-를 하면 구동하지않고 검사해도 보이지 않는다.
+
+---
+
+<h1>#11.2</h1>
+
+- video.paused로 영상이 멈춰있는지 확인이 가능하다.
+
+- video.muted로 음소거가 됬는지 확인할 수 있다.
+
+- <h3>videoPlayer.js에 import 들어가니깐 dev:assets에서 오류가 뜨는 
+  문제가 발생됨</h3>
