@@ -28,18 +28,17 @@ express function을 사용하면 express application을 생성해준다.
 
 ---
 
-서버(?)랑 상호작용하는 그 모든 것들은 request 한다고 말한다.
-ex) /login을 들어가거나 google.com을 간다거나 하는 모든 것들
-내 서버는 그런 것들을 모두 listening 하고 있다.
+<h1>#3.0</h1>
 
----
+- 서버(?)랑 상호작용하는 그 모든 것들은 request 한다고 말한다.
+  ex) /login을 들어가거나 google.com을 간다거나 하는 모든 것들
+  내 서버는 그런 것들을 모두 listening 하고 있다.
 
-app.listen은 바닐라JS에서 배웠던 variableName.addEventListener("interaction", functionName)
-이랑 비슷한 것이다.
+- app.listen은 바닐라JS에서 배웠던 variableName.addEventListener("interaction", functionName) 이랑 비슷한 것이다.
 
----
+- server를 열뗀 port를 오픈해야하는데 창문같은 느낌이다.
 
-google.con === google.com/ <-- 이런게 root이다.
+- google.con === google.com/ <-- 이런게 root이다.
 
 ---
 
