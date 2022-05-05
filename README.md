@@ -1415,3 +1415,20 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - volume의 "input" event는 드래그를 실시간으로 상호작용한다.
 
 - event.target.value만 하면 volume의 value만 가져올 수 있다.
+
+---
+
+<h1>#11.4</h1>
+
+- loadedmetadata는 비디오에서 움직이는 이미지들을 제외한 모든 엑스트라 녀석들을 말하는 것이다.
+
+- loadedmetadata는 meta data가 로드 될때마다 실행될 것이다.
+
+- duration을 사용하는데 read only이다. video.duration을 통해 비디오의 길이(시간)를
+  알 수 있다.
+
+- timeupdate는 currentTime 속성이 변경되는 시점에서 발생된다. (실시간 업로드)
+
+- video.currentTime는 현재 재생되는 영상의 시간의 값을 가져온다.
+
+- new Date().toISOString().substr(11, 8); 하면 00:00:00 만 cut해서 나온다.
