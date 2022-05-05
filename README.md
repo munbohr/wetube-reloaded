@@ -1405,3 +1405,13 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - <h3>videoPlayer.js에 import 들어가니깐 dev:assets에서 오류가 뜨는 
   문제가 발생됨</h3>
+
+---
+
+<h1>#11.3</h1>
+
+- volume의 "change" event는 드래그가 끝나면 즉, 마우스를 놓으면 상호작용?한다.
+
+- volume의 "input" event는 드래그를 실시간으로 상호작용한다.
+
+- event.target.value만 하면 volume의 value만 가져올 수 있다.
