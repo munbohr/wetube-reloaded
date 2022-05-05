@@ -1432,3 +1432,31 @@ Github Login은 복습이 필요하다!!!!!!!!!
 - video.currentTime는 현재 재생되는 영상의 시간의 값을 가져온다.
 
 - new Date().toISOString().substr(11, 8); 하면 00:00:00 만 cut해서 나온다.
+
+---
+
+<h1>#11.6</h1>
+
+- min과 max가 있어야 JS가 어디가 시작이고 끝인지 알 수 있다.
+
+---
+
+<h1>#11.7</h1>
+
+- video.requestFullscreen();는 video를 전체화면으로 보여준다.
+  다른 elements는 fullscreen이 되지않는다.
+
+- document.fullscreenElement는 fullscreen이 아닐 때엔 null을 반환한다.
+  fullscreen이면 true를 반환한다.
+
+---
+
+<h1>#11.8</h1>
+
+- setTimeout( FUNCTION, SECOND)
+
+- timeout을 공유해야한다. const는 특정구역에서만 사용 가능하고,
+  밖으로 나갈 수 없다.
+
+- 만약 비디오 안에서 마우스가 움직인다면 controlTimeout이 존재하는지
+  체크해줄 것이다.
