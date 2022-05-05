@@ -11,6 +11,8 @@ const videoControls = document.getElementById("videoControls");
 
 //
 let controlsTimeout = null;
+//
+let controlsMovementTimeout = null;
 //volume data
 let volumeValue = 0.5;
 video.volume = volumeValue;
@@ -83,18 +85,26 @@ const handleFullscreen = () => {
   }
 };
 
+const hideControls = () => videoControls.classList.remove("showing");
+
 const handleMouseMove = () => {
   if (controlsTimeout) {
     clearTimeout(controlsTimeout);
     controlsTimeout = null;
   }
+  //밑에 함수는 우리가 움직인다면 전혀 실행되지 않을 것이다..
+  if (controlsMovementTimeout) {
+    clearTimeout(controlsMovementTimeout);
+    controlsMovementTimeout = null;
+  }
+  //그리고 같은 function에서 timeout을 만들고 있다.
   videoControls.classList.add("showing");
+  //중간의 function이 멈추면 밑에 함수는  오래된 timeout을 지우고, 새 timeout을 만든다.
+  setTimeout(hideControls, 3000);
 };
 
 const handleMouseLeave = () => {
-  controlsTimeout = setTimeout(() => {
-    videoControls.classList.remove("hidden");
-  }, 3000);
+  controlsMovementTimeout = setTimeout(hideControls, 3000);
 };
 
 playBtn.addEventListener("click", handlePlayClick);
