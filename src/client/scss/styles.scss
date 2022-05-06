@@ -9,6 +9,7 @@
 @import "./components/shared.scss";
 @import "./components/forms.scss";
 @import "./components/social-login.scss";
+@import "./components/video-player.scss";
 
 // Screens
 
@@ -33,7 +34,5 @@ main {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
   margin-top: 50px;
 }

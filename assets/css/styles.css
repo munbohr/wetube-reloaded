@@ -266,6 +266,37 @@ input[type=submit],
   color: azure;
 }
 
+.videoContainer {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.videoControls {
+  width: 1040px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  margin-bottom: 5px;
+  bottom: 0px;
+}
+
+.timeline {
+  margin-right: 60px;
+  width: 330px;
+  height: 7px;
+}
+
+.play {
+  margin-left: 20px;
+}
+
 .search__form {
   margin-bottom: 60px;
   display: flex;
@@ -339,7 +370,5 @@ main {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
   margin-top: 50px;
 }

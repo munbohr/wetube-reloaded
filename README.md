@@ -143,7 +143,7 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
 
 - Router는 controler와 url을 쉽게 관리해준다.
   쉽게 말해 미니 어플리케이션을 만들어주는 것이다.
-  Router는 우리가 작업중인 주제를 기반으로 url을 구획화한다.
+  Router는 우리가 작업중인 주제를 기반으로 url을 그룹화한다.
 
 ---
 
@@ -155,6 +155,8 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
   export는 무언가를 밖에 공유하는 것이다.
   default export를 했기때문에 밖에선 이름을 바꿔도 상관이 없다.
 
+- export 를 하지 않으면 그 파일들은 독립된 상태이다.
+
 - #4.2 진행중 videoController에서 export를 해주지 않아서 찾고 있었음
 
 - default에서 export 할 때엔 내가 원하는 아무 이름이나 가능한데
@@ -163,6 +165,9 @@ GET은 http method이다. 의미는 무엇을 가져와 달라고 요청하는 �
   import {variable1, variable2, variable3 } from "파일 위치";형식으로 가져올 수 있다.
 
 - 자바 스크립트에서 delete는 이미 예약 되어있어서 변수명으로 사용할 수 없다,
+
+- Router는 export const Router가 아니라 export default Router로 해야 오류가
+  안생긴다.
 
   <h1>#4.4</h1>
 
@@ -1467,3 +1472,10 @@ Github Login은 복습이 필요하다!!!!!!!!!
 
 - 만약 마우스가 멈추면 timeout을 실행하고 마우스가 멈추지 않으면 timeout을
   취소한다.
+
+---
+
+<h1>#11.9</h1>
+
+- play라는 method 와 pause라는 property는 video element를 가리킨다는 점에서
+  특별한 존재이다.
