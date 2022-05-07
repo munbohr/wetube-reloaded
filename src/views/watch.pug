@@ -4,18 +4,23 @@ block content
     div.videoContainer#videoContainer
         video(src="/" + video.fileUrl ,width="1200px", height="600px")
         div.videoControls#videoControls
-            button.play#play Play
-            div
+            div.videoControls__play
+                span.videoControls__playBtn#play 
+                    i.fas.fa-play
+            div.videoControls__time
                 span#currentTime 00:00
                 span  / 
                 span#totalTime 00:00        
-            div
+            div.videoControls__timeline
                 input(type="range", value="0",step="1",min="0" ).timeline#timeline
-            input(type="range", value=0.5,step="0.1",min="0" max="1")#volume
-            button#mute Mute
+            div.videoControls__volume
+                input(type="range", value=0.5,step="0.1",min="0" max="1").volume#volume
+                span#mute
+                    i.fas.fa-volume-up
             
             div 
-                button#fullScreen Enter Full Screen
+                span#fullScreen
+                    i.fas.fa-expand
     //-
         div 
             p=video.description  

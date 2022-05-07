@@ -7,21 +7,50 @@
   position: relative;
 }
 .videoControls {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  box-sizing: border-box;
   width: 1040px;
   height: 40px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  background-color: white;
+  justify-content: space-evenly;
+  background-color: #0e1117;
   position: absolute;
   margin-bottom: 5px;
   bottom: 0px;
+  &.showing {
+    opacity: 1;
+  }
 }
 .timeline {
-  margin-right: 60px;
-  width: 330px;
-  height: 7px;
+  width: 580px;
+  height: 9.5px;
 }
-.play {
-  margin-left: 20px;
+.videoControls__playBtn {
+  width: 100px;
+  height: 100%;
+}
+.volume {
+  width: 100px;
+}
+.videoControls__time {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+.videoControls__timeline {
+  height: 100%;
+  width: 580px;
+  display: flex;
+  align-items: center;
+}
+.videoControls__volume {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
